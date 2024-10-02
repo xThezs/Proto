@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  api-rest:
+    build:
+      context: ./backend/api-rest/
+      dockerfile: Dockerfile
+    ports:
+      - "3030:3030"
+
+  file-upload:
+    build:
+      context: ./backend/file-upload/
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+
+  socket-io:
+    build:
+      context: ./backend/socket-io/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build:
+      context: ./frontend/BinaryHarmony/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
